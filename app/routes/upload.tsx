@@ -1,5 +1,5 @@
 import {type FormEvent, useState} from 'react'
-import NavBar from "~/components/NavBar";
+import Navbar from "~/components/NavBar";
 import FileUploader from "~/components/FileUploader";
 import {usePuterStore} from "~/lib/puter";
 import {useNavigate} from "react-router";
@@ -48,7 +48,7 @@ const Upload = () => {
 
         const feedback = await ai.feedback(
             uploadedFile.path,
-            prepareInstructions({jobTitle,jobDescription})
+            prepareInstructions({ jobTitle, jobDescription })
         )
         if (!feedback) return setStatusText('Error: Failed to analyze resume');
 
@@ -80,7 +80,7 @@ const Upload = () => {
 
     return (
         <main className="bg-[url('/images/bg-main.svg')] bg-cover">
-            <NavBar />
+            <Navbar />
 
             <section className="main-section">
                 <div className="page-heading py-16">
